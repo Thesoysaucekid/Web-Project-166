@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Tempt 2</title>
+<div id="background">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+ </div>
+    <script>
+    var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {slideIndex = 1;}
+  if (n < 1) {slideIndex = slides.length;}
+  for (i = 0; i < slides.length; i++)
+  {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000);
+}
+</script>
+</head>
+<body>
+  <div id="header">
+  <h1>This is Template 2.</h1>
+  <hr>
+    </div>
+<div>subdiv1</div>
+<div class="slideshow-container">
+  <div class="slides">
+    <img src="/images/image1.jpg" style="width:50%">
+    <div class="text" style="top: 500px;">Cloudy Skys in Glendale, Az</div>
+  </div>
+  <div class="slides">
+    <img src="/images/image2.jpg" style="width:80%">
+    <div class="text" style="top: 400px;">Fighter Jet in Chicago Airport</div>
+  </div>
+  <div class="slides">
+    <img src="/images/image3.jpg" style="width:50%">
+    <div class="text" style="top: 500px;">The Lovely View in Sedona</div>
+  </div>
+ <div class="slides">
+    <img src="/images/image4.jpg" style="width:50%">
+    <div class="text" style="top: 500px;">Cha Cha</div>
+  </div>
+  <a class="prev" onclick="plusSlides(-1)" style="right: 930px;">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div id="footer">             
+  <p style="top: 20px;margin-top: 50px;">This Is The Footer</p>            
+</div>
+<div style="top: 500px;">
+  <a href="mailto:email@example.com?subject=Feedback&body=Hello,%0D%0A%0D%0A" >Contact Us</a>
+</div>
+
+</body>
+</html>
