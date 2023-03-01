@@ -36,6 +36,43 @@ function showSlides(n) {
 }
 </script>
 </div>
+<div>
+  <form id="myForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"><br>
+  
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"><br>
+  
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date"><br>
+  
+    <label for="cellPhone">Cell Phone:</label>
+    <input type="text" id="cellPhone" name="cellPhone"><br>
+  
+    <label for="schoolName">School Name:</label>
+    <input type="text" id="schoolName" name="schoolName"><br>
+  
+    <a href="form.html"><input type="submit" value="Submit"></a>
+  </form>
+  
+  <script>
+    const form = document.getElementById('myForm');
+    form.addEventListener('submit', handleSubmit);
+  
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent form submission
+  
+      const formData = new FormData(event.target); 
+      const data = {}; 
+  
+      for (const [key, value] of formData.entries()) {
+        data[key] = value;
+      }
+      console.log(JSON.stringify(data));
+    }
+  </script>  
+</div>
 </head>
 <body>
   <div id="header">
@@ -45,19 +82,19 @@ function showSlides(n) {
 <div>subdiv1</div>
 <div class="slideshow-container">
   <div class="slides">
-    <img src="/Web-Project-166/Web-Project 166/images/image1.jpg" style="width:50%">
+    <img src="/Web-Project 166/images/image1.jpg" style="width:50%">
     <div class="text" style="top: 500px;">Cloudy Skys in Glendale, Az</div>
   </div>
   <div class="slides">
-    <img src="/Web-Project-166/Web-Project 166/images/image2.jpg" style="width:80%">
+    <img src="/Web-Project 166/images/image2.jpg" style="width:80%">
     <div class="text" style="top: 400px;">Fighter Jet in Chicago Airport</div>
   </div>
   <div class="slides">
-    <img src="/Web-Project-166/Web-Project 166/images/image3.jpg" style="width:50%">
+    <img src="/Web-Project 166/images/image3.jpg" style="width:50%">
     <div class="text" style="top: 500px;">The Lovely View in Sedona</div>
   </div>
  <div class="slides">
-    <img src="/Web-Project-166/Web-Project 166/images/image4.jpg" style="width:50%">
+    <img src="/Web-Project 166/images/image4.jpg" style="width:50%">
     <div class="text" style="top: 500px;">Cha Cha</div>
   </div>
   <a class="prev" onclick="plusSlides(-1)" style="right: 930px;">&#10094;</a>
@@ -72,17 +109,6 @@ function showSlides(n) {
 <body>
   <div class="container">
 
-    <table>
-      <thread>
-        <tr>
-          <th>First name</th>
-          <th>Last name</th>
-          <th>Date</th>
-        </tr>
-      </thread>
-      <tbody id=""table-body">
-      
-      </tbody>
     </table>
   </div>
 </body>

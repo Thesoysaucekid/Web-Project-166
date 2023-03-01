@@ -1,27 +1,27 @@
-var tableData = [
-    {
-    'first_name':'Brian' , 
-    'last_name': 'Nguyen' , 
-    'date':'8/15/99',
-    },
-    {
-        'first_name':'Brandon' , 
-        'last_name': 'Nguyen' , 
-        'date':'8/30/20',
-        },
-        {
-            'first_name':'Ethan' , 
-            'last_name': 'Nguyen' , 
-            'date':'8/21/13',
-            },
-            {
-                'first_name':'Ben' , 
-                'last_name': 'Nguyen' , 
-                'date':'8/27/10',
-                },
-                    
-]
+const form = document.getElementById("registration-form");
 
-for (var i in tableData){
-    var row = 
-}
+form.addEventListener("submit", (event) => {
+   event.preventDefault();
+   
+   const registrationData = {
+      first_name: form.elements["first_name"].value,
+      last_name: form.elements["last_name"].value,
+      date: form.elements["date"].value,
+      cell_phone: form.elements["cell_phone"].value,
+      school_name: form.elements["school_name"].value
+   };
+   
+   console.log(registrationData);
+});
+let registrations = [];
+
+function submitForm() {
+
+  const registrationInfo =
+  for (let i = 1; i <= 10; i++) {
+    const registrationData = {
+       first_name: "First " + i,
+       last_name: "Last " + i,
+       date: "2022-03-15",
+      
+ 
