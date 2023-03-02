@@ -5,26 +5,22 @@
 </head>
 <body>
   <a href="Index.t2.html">Back to Home</a>
+ <div id="output">{}</div><script>
+                const form1 = document.getElementById("form");
+                let output = document.getElementById("output");
+                let inputs = [];
 
-  <h1>Registration Form</h1>
-  <form id="registration-form">
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name">
-    
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name">
-    
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date">
-    
-    <label for="cell_phone">Cell Phone:</label>
-    <input type="tel" id="cell_phone" name="cell_phone">
-    
-    <label for="school_name">School Name:</label>
-    <input type="text" id="school_name" name="school_name">
-    
-    <input type="submit" value="Submit">
- </form>
+                form1.addEventListener('submit', ()=>{
+
+                event.preventDefault();
+                const formdata = new FormData(form1);
+                const data = Object.fromEntries(formdata);
+
+                jsonObject = JSON.stringify(data);
+                inputs.push(jsonObject);
+                output.innerHTML = ""{<br>"" + inputs + ""<br>}"";
+                }) 
+</script>
  
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Index Tempt 2</title>
 <div id="background">
-  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <link rel="stylesheet" type="text/css" href="../html/styles.css">
  </div>
  <div>
     <script> 
@@ -44,6 +44,7 @@ function showSlides(n) {
   
   <h1>Registration Form</h1>
   <form id="registration-form">
+    <form action="./form.html" method="post" enctype="text/plain" id="form">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name">
     
@@ -62,9 +63,9 @@ function showSlides(n) {
     <label for="school_name">School Name:</label>
     <input type="text" id="school_name" name="school_name">
     
-    <a href="results.html"><button type="submit">Submit</button></a> 
+    <button type="submit" id="submit-form">Submit</button> 
  </form>
-  
+  </form>
   <script>
     const form = document.getElementById('myForm');
     form.addEventListener('submit', handleSubmit);
@@ -116,9 +117,24 @@ function showSlides(n) {
   <a href="mailto:email@example.com?subject=Feedback&body=Hello,%0D%0A%0D%0A" >Contact Us</a>
 </div>
 <body>
-  <div class="container">
+  <script>
+    const form1 = document.getElementById("form");
+    let output = document.getElementById("output");
+    let inputs = [];
+                                                         
+    form1.addEventListener('submit', ()=>{
+                                      
+    event.preventDefault()
+    const formdata = new FormData(form1);
+    const data = Object.fromEntries(formdata);
+                                
+    jsonObject = JSON.stringify(data);
+    inputs.push(jsonObject);
+    console.log(jsonObject);
+    output.innerHTML = "\"{<br>\"" + inputs + "\"<br>}\"";
+    }) 
+</script>
 
-    </table>
   </div>
 </body>
 </body>
