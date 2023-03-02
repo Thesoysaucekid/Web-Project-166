@@ -69,3 +69,14 @@ body{
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
+.text-container {
+  position: relative;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: grayscale(50%);
+  opacity: 0.5;
+  border: 1px solid black;
+}
