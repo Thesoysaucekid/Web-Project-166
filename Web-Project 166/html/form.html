@@ -1,26 +1,62 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Form Page</title>
+    <title>template 2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="Index.t2.html">Back to Home</a>
- <div id="output">{}</div><script>
+
+    <div id="header">
+        <h1>this is the form for exercise/lab 5</h1>
+    </div>
+
+    <hr>
+
+    <div id="main">
+            <h1>this page allows you to select a different image each time</h1>
+            <form action="./form.html" method="post" enctype="text/plain" id="form">
+                <label for="first-name">first-name</label>
+                <input type="text" name="first-name"><br>
+                <label for="last-name">last-name</label>
+                <input type="text" name="last-name"><br>
+                <label for="date">user name<label>
+                <input type="text" name="date"><br>
+                <label for="cellphone">cellphone</label>
+                <input type="text" name="cellphone"><br>
+                <label for="school">zip code</label>
+                <input type="text" name="school"><br>
+                <label for="password">password</label>
+                <input type="text" name="password"><br>
+                <button type="submit" id="submit-form">create end user</button>
+            </form>
+            <h2>The current end users are (in json format):</h2>
+            <h3 id="output">{}</h3>
+            <script>
                 const form1 = document.getElementById("form");
                 let output = document.getElementById("output");
                 let inputs = [];
-
+                                                                     
                 form1.addEventListener('submit', ()=>{
-
-                event.preventDefault();
+                                                  
+                event.preventDefault()
                 const formdata = new FormData(form1);
                 const data = Object.fromEntries(formdata);
-
+                                            
                 jsonObject = JSON.stringify(data);
                 inputs.push(jsonObject);
-                output.innerHTML = ""{<br>"" + inputs + ""<br>}"";
+                console.log(jsonObject);
+                output.innerHTML = "\"{<br>\"" + inputs + "\"<br>}\"";
                 }) 
-</script>
- 
+            </script>
+            
+    </div>
+
+
+    <div id="footer">
+        <p>this is the footer</p>
+        <a href="./index.html">click here to go to page/index 1</a><br>
+        <a href="./index.t2.html">click here to go to page/index 2</a><br>
+        <a href="./index.t3.html">click here to go to page/index 3</a>
+    </div>
+    
 </body>
 </html>
