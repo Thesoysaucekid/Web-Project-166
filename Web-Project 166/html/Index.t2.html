@@ -41,50 +41,43 @@ function showSlides(n) {
  
     <p></p>
   </div>
-  
-  <h1>Registration Form</h1>
-  <form id="registration-form">
-    <form action="./form.html" method="post" enctype="text/plain" id="form">
-    <label for="first_name">First Name:</label>
-    <input type="text" id="first_name" name="first_name">
-    
-    <label for="last_name">Last Name:</label>
-    <input type="text" id="last_name" name="last_name">
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password">
-    
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date">
-    
-    <label for="cell_phone">Cell Phone:</label>
-    <input type="tel" id="cell_phone" name="cell_phone"><br>
-    
-    <label for="school_name">School Name:</label>
-    <input type="text" id="school_name" name="school_name">
-    
-    <button type="submit" id="submit-form">Submit</button> 
- </form>
-  </form>
-  <script>
-    const form = document.getElementById('myForm');
-    form.addEventListener('submit', handleSubmit);
-  
-    function handleSubmit(event) {
-      event.preventDefault(); // Prevent form submission
-  
-      const formData = new FormData(event.target); 
-      const data = {}; 
-  
-      for (const [key, value] of formData.entries()) {
-        data[key] = value;
-      }
-      console.log(JSON.stringify(data));
-    }
-  </script>  
-  <div>
-    <a href="./form.html">form</a>
-  </div>
+   <div id="main" style="flex: auto;">
+            <h1>Please register to login!</h1>
+            <form action="./form.html" method="post" enctype="text/plain" id="form" style="margin-left: -30px;">
+                <label for="first-name">first-name</label>
+                <input type="text" name="first-name"><br>
+                <label for="last-name">last-name</label>
+                <input type="text" name="last-name"><br>
+                <label for="date">user name<label>
+                <input type="text" name="date"><br>
+                <label for="cellphone">cellphone</label>
+                <input type="text" name="cellphone"><br>
+                <label for="school">zip code</label>
+                <input type="text" name="school"><br>
+                <label for="password">password</label>
+                <input type="password" name="password"><br>
+                <button type="submit" id="submit-form">create end user</button>
+            </form>
+            <h3 id="output">{}</h3>
+            <script>
+                const form1 = document.getElementById("form");
+                let output = document.getElementById("output");
+                let inputs = [];
+                                                                     
+                form1.addEventListener('submit', ()=>{
+                                                  
+                event.preventDefault()
+                const formdata = new FormData(form1);
+                const data = Object.fromEntries(formdata);
+                                            
+                jsonObject = JSON.stringify(data);
+                inputs.push(jsonObject);
+                console.log(jsonObject);
+                output.innerHTML = "\"{<br>\"" + inputs + "\"<br>}\"";
+                }) 
+            </script>
+            
+    </div>
 </div>
 </head>
 <body>
@@ -92,7 +85,7 @@ function showSlides(n) {
   <h1>This is Template 2.</h1>
   <hr>
     </div>
-<div>subdiv1</div>
+<div>subdiv</div>
 <div class="slideshow-container">
   <div class="slides">
     <img src="/images/image1.jpg" style="width:50%">
